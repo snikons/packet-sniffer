@@ -8,13 +8,15 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wextra -Wpendantic
   -Wcast-qual -Wswitch-default -Wswitch-enum -Wconversion -Wunreachable-code
   -Wformat=2 -Winit-self -std=c18 -O3")
 
+#
+# https://developer.gnome.org/glib/stable/glib-compiling.html
+# glib: pkg-config --cflags glib-2.0
+#
 include_directories(
-  /usr/include/glib-1.2
-  /usr/lib64/glib/include
-)
+  /usr/include/glib-2.0
+  /usr/lib64/glib-2.0/include
 
-link_directories(
-  /usr/lib64/
+  /usr/include
 )
 
 add_executable(
@@ -22,7 +24,11 @@ add_executable(
   src/main.c
 )
 
+#
+# https://developer.gnome.org/glib/stable/glib-compiling.html
+# glib: pkg-config --libs glib-2.0
+#
 target_link_libraries(
   packet-sniffer
-  glib
+  glib-2.0
 )

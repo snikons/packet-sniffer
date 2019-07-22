@@ -2,7 +2,7 @@
 A packet sniffer in C
 
 # Dependencies
-* glib
+* glib2
 * CMake
 * C compiler
 
@@ -10,7 +10,7 @@ A packet sniffer in C
 `./build.sh`
 
 # Run
-`bin/packet-analyzer`
+`bin/packet-sniffer`
 
 # Tested on
 * CentOS 7
